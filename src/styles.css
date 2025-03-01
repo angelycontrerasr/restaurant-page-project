@@ -1,4 +1,17 @@
 /* styles.css */
+@font-face {
+    font-family: "Karma-Regular";
+    src: url("Karma-Regular.ttf")
+}
+@font-face {
+    font-family: "Karma-SemiBold";
+    src: url("Karma-SemiBold.ttf")
+}
+@font-face {
+    font-family: "KaushanScript-Regular";
+    src: url("KaushanScript-Regular.ttf")
+}
 body {
     background-color: rebeccapurple;
+
 }
