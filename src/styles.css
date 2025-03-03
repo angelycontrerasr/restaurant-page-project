@@ -12,6 +12,18 @@
     src: url("KaushanScript-Regular.ttf")
 }
 body {
-    background-color: rebeccapurple;
+    background-color: #B77B61;
+}
+.welcoming-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+.first-line {
+    font-family: KaushanScript-Regular, sans-serif;
+}
+.welcoming-img {
+    height: 15em;
+    width: 35em;
 }

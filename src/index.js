@@ -6,13 +6,24 @@ import loadHome from './home.js';
 import "./styles.css";
 function createNavbar() {
     const nav = document.createElement('nav');
+    const ul = document.createElement('ul');
 
-    const homeBtn = document.createElement('button');
-    homeBtn.textContent = 'Inicio';
-    homeBtn.addEventListener('click', () => loadPage(loadHome));
-    nav.append(homeBtn);
+    const homeItem = document.createElement('li');
+    const homeLink = document.createElement('a');
+    homeLink.textContent = 'Home';
+    homeLink.href = '#';
+    homeLink.style.cursor = 'pointer';
+
+    homeLink.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevents the page from jumping
+        loadPage(loadHome);
+    });
+
+    homeItem.appendChild(homeLink);
+    ul.appendChild(homeItem);
+    nav.appendChild(ul);
+
     return nav;
-
 }
 
 function loadPage(loadFunction) {
@@ -21,7 +32,6 @@ function loadPage(loadFunction) {
     content.appendChild(loadFunction()); // 🔥 Cargar nueva sección
 }
 
-// Cargar la página inicial
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content');
     document.body.insertBefore(createNavbar(), content);
