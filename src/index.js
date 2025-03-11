@@ -1,8 +1,6 @@
 console.log('Happy developing ✨')
-import "./styles.css";
-
-console.log('Happy developing ✨')
 import loadHome from './home.js';
+import loadMenu from "./menu";
 import "./styles.css";
 function createNavbar() {
     const nav = document.createElement('nav');
@@ -18,11 +16,23 @@ function createNavbar() {
         event.preventDefault(); // Prevents the page from jumping
         loadPage(loadHome);
     });
-
     homeItem.appendChild(homeLink);
     ul.appendChild(homeItem);
-    nav.appendChild(ul);
 
+    const menuItem = document.createElement('li');
+    const menuLink = document.createElement('a');
+    menuLink.textContent = 'Menu';
+    menuLink.href = '#';
+    menuLink.style.cursor = 'pointer';
+
+    menuLink.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevents the page from jumping
+        loadPage(loadMenu);
+    });
+    menuItem.appendChild(menuLink);
+    ul.appendChild(menuItem);
+
+    nav.appendChild(ul);
     return nav;
 }
 
