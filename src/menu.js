@@ -1,37 +1,93 @@
 import margaritaPizzaImage from './margarita.jpg';
-
-export default function loadMenu(){
-    const menuDiv =  document.createElement('div');
+import pepperoniPizzaImage from './pepperoni.jpg';
+import hawaiianPizzaImage from './hawaian.jpg';
+import bbqChickenPizzaImage from './bbq-chicken.jpg';
+import meatLoverPizzaImage from "./meat-lover.jpg";
+import veggieSupremePizzaImage from "./veggie-supreme.jpg";
+export default function loadMenu() {
+    const menuDiv = document.createElement('div');
     menuDiv.classList.add('menu-div');
 
-    const foodTextImgContainer = document.createElement('div');
-    foodTextImgContainer.classList.add('food-img-container')
+    // Array of menu items
+    const menuItems = [
+        {
+            title: "Margherita",
+            description: "Tomato sauce, fresh mozzarella, fresh basil, and olive oil.",
+            image: margaritaPizzaImage,
+            alt: "Margherita Pizza"
+        },
+        {
+            title: "Pepperoni",
+            description: "Loaded with crispy pepperoni and mozzarella cheese.",
+            image: pepperoniPizzaImage,
+            alt: "Pepperoni Pizza"
+        },
+        {
+            title: "Hawaiian",
+            description: "Tomato sauce, mozzarella, ham and pineapple.",
+            image: hawaiianPizzaImage,
+            alt: "Hawaiian Pizza"
+        },
+        {
+            title: "BBQ Chicken",
+            description: "Grilled chicken, BBQ sauce, mozzarella, and red onions.",
+            image: bbqChickenPizzaImage,
+            alt: "BBQ Chicken Pizza",
+        },
+        {
+            title: "Meat Lover",
+            description: "Pepperoni, sausage, ham, bacon and ground beef",
+            image: meatLoverPizzaImage,
+            alt: "Meat Lover Pizza",
+        },
+        {
+            Title: "Veggie Supreme",
+            description: "Tomato sauce, mozzarella, mushrooms, bell peppers, onions, olives, and tomatoes.",
+            image: veggieSupremePizzaImage,
+            alt: "Veggie Supreme Pizza"
+        }
+    ];
 
-    const foodText = document.createElement('div');
-    foodText.classList.add('food-text');
+    // Create a container for each menu item
+    menuItems.forEach(item => {
+        const itemContainer = document.createElement('div');
+        itemContainer.classList.add('menu-item');
 
-    const foodTitle1 = document.createElement('div');
-    foodTitle1.innerHTML= '<p>Margherita</p>';
-    foodTitle1.classList.add('food-title');
+        const foodTextImgContainer = document.createElement('div');
+        foodTextImgContainer.classList.add('food-img-container');
 
-    const foodDescription1 = document.createElement('div');
-    foodDescription1.innerHTML='<p>Tomato sauce, fresh mozzarella fresh basil, ' +
-        'and olive oil.</p>';
-    foodDescription1.classList.add('food-description');
+        // Create text container
+        const foodText = document.createElement('div');
+        foodText.classList.add('food-text');
 
-    foodText.appendChild(foodTitle1);
-    foodText.appendChild(foodDescription1);
+        // Create title element
+        const foodTitle = document.createElement('div');
+        foodTitle.classList.add('food-title');
+        foodTitle.innerHTML = `<p>${item.title}</p>`;
 
-    const margaritaPizzaImg = document.createElement('img');
-    margaritaPizzaImg.src = margaritaPizzaImage;
-    margaritaPizzaImg.alt = 'Margarita Pizza';
-    margaritaPizzaImg.classList.add('food-image');
+        // Create description element
+        const foodDescription = document.createElement('div');
+        foodDescription.classList.add('food-description');
+        foodDescription.innerHTML = `<p>${item.description}</p>`;
 
-    const foodTitle2 = document.createElement('div');
-    foodTextImgContainer.appendChild(foodText);
-    foodTextImgContainer.appendChild(margaritaPizzaImg);
+        // Append title and description to the text container
+        foodText.appendChild(foodTitle);
+        foodText.appendChild(foodDescription);
 
-    menuDiv.appendChild(foodTextImgContainer);
+        // Create image element
+        const foodImg = document.createElement('img');
+        foodImg.classList.add('food-image');
+        foodImg.src = item.image;
+        foodImg.alt = item.alt;
 
-    return menuDiv
+        // Combine text and image in their container
+        foodTextImgContainer.appendChild(foodText);
+        foodTextImgContainer.appendChild(foodImg);
+
+        // Add the item container to the main menu container
+        itemContainer.appendChild(foodTextImgContainer);
+        menuDiv.appendChild(itemContainer);
+    });
+
+    return menuDiv;
 }
