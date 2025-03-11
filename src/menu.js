@@ -36,12 +36,12 @@ export default function loadMenu() {
         },
         {
             title: "Meat Lover",
-            description: "Pepperoni, sausage, ham, bacon and ground beef",
+            description: "Pepperoni, sausage, ham, bacon and ground beef.",
             image: meatLoverPizzaImage,
             alt: "Meat Lover Pizza",
         },
         {
-            Title: "Veggie Supreme",
+            title: "Veggie Supreme",
             description: "Tomato sauce, mozzarella, mushrooms, bell peppers, onions, olives, and tomatoes.",
             image: veggieSupremePizzaImage,
             alt: "Veggie Supreme Pizza"

@@ -5,7 +5,10 @@ import "./styles.css";
 function createNavbar() {
     const nav = document.createElement('nav');
     const ul = document.createElement('ul');
-
+    const pizzeriaName = document.createElement('li');
+    pizzeriaName.textContent = "La Bella Vita Pizzeria";
+    pizzeriaName.classList.add('pizzeria-name');
+    ul.appendChild(pizzeriaName);
     const homeItem = document.createElement('li');
     const homeLink = document.createElement('a');
     homeLink.textContent = 'Home';
