@@ -1,6 +1,11 @@
+import margaritaPizzaImage from './margarita.jpg';
+
 export default function loadMenu(){
     const menuDiv =  document.createElement('div');
     menuDiv.classList.add('menu-div');
+
+    const foodTextImgContainer = document.createElement('div');
+    foodTextImgContainer.classList.add('food-img-container')
 
     const foodText = document.createElement('div');
     foodText.classList.add('food-text');
@@ -16,7 +21,17 @@ export default function loadMenu(){
 
     foodText.appendChild(foodTitle1);
     foodText.appendChild(foodDescription1);
-    menuDiv.appendChild(foodText);
+
+    const margaritaPizzaImg = document.createElement('img');
+    margaritaPizzaImg.src = margaritaPizzaImage;
+    margaritaPizzaImg.alt = 'Margarita Pizza';
+    margaritaPizzaImg.classList.add('food-image');
+
+    const foodTitle2 = document.createElement('div');
+    foodTextImgContainer.appendChild(foodText);
+    foodTextImgContainer.appendChild(margaritaPizzaImg);
+
+    menuDiv.appendChild(foodTextImgContainer);
 
     return menuDiv
 }
