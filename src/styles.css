@@ -137,3 +137,7 @@ a:hover, a:visited, a:link, a:active
     font-family: Karma-Regular, sans-serif;
     font-size: 1.4rem;
 }
+
+.contact-div {
+    padding-top: 3rem;
+}

@@ -1,3 +1,5 @@
+import loadContact from "./contact";
+
 console.log('Happy developing ✨')
 import loadHome from './home.js';
 import loadMenu from "./menu";
@@ -34,7 +36,17 @@ function createNavbar() {
     });
     menuItem.appendChild(menuLink);
     ul.appendChild(menuItem);
-
+    const contactItem = document.createElement('li');
+    const contactLink = document.createElement('a');
+    contactLink.textContent = 'Contact';
+    contactLink.href = '#';
+    contactLink.style.cursor = 'pointer';
+    contactLink.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevents the page from jumping
+        loadPage(loadContact);
+    });
+    contactItem.appendChild(contactLink);
+    ul.appendChild(contactItem);
     nav.appendChild(ul);
     return nav;
 }
