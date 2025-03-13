@@ -140,4 +140,25 @@ a:hover, a:visited, a:link, a:active
 
 .contact-div {
     padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
+}
+
+.hear-from-you {
+    font-size: 1.8rem;
+    font-family: Karma-Regular,sans-serif;
+    text-align: left;
+}
+
+.contact-title {
+    font-size: 2rem;
+    font-family: Karma-SemiBold, sans-serif;
+    text-align: left;
+}
+
+.contact-description {
+    font-size: 1.5rem;
+    font-family: Karma-Regular, sans-serif;
+    text-align: left;
 }

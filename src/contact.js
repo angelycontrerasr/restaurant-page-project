@@ -17,7 +17,7 @@ export default function loadContact() {
     ourLocation.innerHTML = '<p>Our Location</p>';
     ourLocation.classList.add('contact-title');
     const locationDescription = document.createElement('div');
-    locationDescription.innerHTML = '<p>La Bella Vita Pizzeria 123 Gourmet Avenue, New York, NY 10001</p>'
+    locationDescription.innerHTML = '<p><strong>La Bella Vita Pizzeria</strong> 123 Gourmet Avenue, New York, NY 10001</p>'
     locationDescription.classList.add('contact-description');
 
     contactBlock1.appendChild(ourLocation);
